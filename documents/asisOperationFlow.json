@@ -1,0 +1,47 @@
+{
+  "key": "asisOperationFlow",
+  "value": [
+    {
+      "id": "イベント告知・募集機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[イベント情報登録] --> B[イベント募集開始]\n        B --> C[イベント内容管理]\n    end\n\n    subgraph イベント運営スタッフ\n        D[イベント情報確認] --> E[参加者情報管理]\n        E --> F[イベント状況モニタリング]\n    end\n\n    subgraph イベント参加者\n        G[イベント情報閲覧] --> H[参加登録]\n        H --> I[参加費支払い]\n        I --> J[参加確定]\n    end\n\n    subgraph システム管理者\n        K[システム監視] --> L[ユーザー管理]\n        L --> M[システムメンテナンス]\n    end\n\n    A --> G\n    B --> D\n    H --> E\n    C --> F"
+      }
+    },
+    {
+      "id": "参加者登録管理機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[イベント情報登録] --> B[参加者上限数設定]\n        B --> C[参加登録期間設定]\n    end\n\n    subgraph イベント参加者\n        D[イベントページ閲覧] --> E[参加申込フォーム入力]\n        E --> F[参加費支払]\n        F --> G[参加登録完了]\n    end\n\n    subgraph イベント運営スタッフ\n        H[参加者情報確認] --> I[参加者ステータス管理]\n        I --> J[参加者への連絡対応]\n    end\n\n    subgraph システム管理者\n        K[システム設定管理] --> L[ユーザー権限管理]\n        L --> M[データバックアップ]\n    end\n\n    C --> D\n    G --> H\n    J --> G"
+      }
+    },
+    {
+      "id": "ハイブリッド開催対応機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[イベント情報登録] --> B[開催形式選択]\n        B --> C[会場情報登録]\n        B --> D[オンライン接続情報設定]\n        C --> E[参加定員設定]\n        D --> E\n    end\n\n    subgraph システム管理者\n        F[システム設定確認] --> G[接続テスト実施]\n        G --> H[開催環境承認]\n    end\n\n    subgraph イベント参加者\n        I[参加形式選択] --> J[参加登録実行]\n        J --> K[参加情報受領]\n    end\n\n    subgraph イベント運営スタッフ\n        L[参加者リスト確認] --> M[会場準備]\n        L --> N[オンライン環境準備]\n        M --> O[当日運営実施]\n        N --> O\n    end\n\n    E --> F\n    H --> I\n    K --> L"
+      }
+    },
+    {
+      "id": "自動メール配信機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[メール配信設定] --> B[配信内容作成]\n        B --> C[配信対象選択]\n        C --> D[配信スケジュール設定]\n    end\n\n    subgraph システム管理者\n        E[メールテンプレート管理] --> F[配信状況監視]\n        F --> G[エラー対応]\n    end\n\n    subgraph システム\n        H[自動メール生成] --> I[メール配信実行]\n        I --> J[配信結果記録]\n        J --> K[未達メール再送]\n    end\n\n    subgraph イベント参加者\n        L[メール受信] --> M[メール内容確認]\n    end\n\n    D --> H\n    G --> H\n    K --> I\n    I --> L"
+      }
+    },
+    {
+      "id": "参加者一覧管理機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント運営スタッフ\n        B1[参加者一覧表示]\n        B2[参加状況確認]\n        B3[参加者情報編集]\n        B4[参加者データ出力]\n    end\n\n    subgraph システム管理者\n        C1[アクセス権限管理]\n        C2[データバックアップ]\n        C3[システム設定管理]\n    end\n\n    subgraph イベント開催者\n        A1[参加者データ分析]\n        A2[参加状況レポート確認]\n    end\n\n    subgraph イベント参加者\n        D1[参加登録情報確認]\n        D2[個人情報更新]\n    end\n\n    B1 --> B2\n    B2 --> B3\n    B3 --> B4\n    A1 --> A2\n    D1 --> D2\n    C1 --> C2\n    C2 --> C3"
+      }
+    },
+    {
+      "id": "募集期間管理機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[募集期間設定] --> B[期間情報登録]\n        B --> C[期間情報確認]\n    end\n\n    subgraph システム管理者\n        D[期間設定承認] --> E[期間情報反映]\n        E --> F[設定完了通知]\n    end\n\n    subgraph イベント運営スタッフ\n        G[期間情報確認] --> H[期間内募集管理]\n        H --> I[募集状況モニタリング]\n    end\n\n    subgraph イベント参加者\n        J[募集期間確認] --> K[参加申込判断]\n    end\n\n    C --> D\n    F --> G\n    F --> J\n    I --> H"
+      }
+    },
+    {
+      "id": "チケット価格設定機能",
+      "value": {
+        "mermaid": "graph TD\n    subgraph イベント開催者\n        A[イベント登録] --> B[チケット種別設定]\n        B --> C[価格設定]\n        C --> D[割引条件設定]\n        D --> E[公開設定]\n    end\n\n    subgraph イベント運営スタッフ\n        E --> F[チケット販売状況確認]\n        F --> G[価格変更判断]\n        G --> H[価格更新]\n    end\n\n    subgraph イベント参加者\n        E --> I[チケット種別閲覧]\n        I --> J[チケット選択]\n        J --> K[チケット購入]\n    end\n\n    subgraph システム管理者\n        L[価格設定ルール管理]\n        M[決済システム連携管理]\n        N[料金計算ロジック管理]\n    end"
+      }
+    }
+  ]
+}

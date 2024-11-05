@@ -1,0 +1,41 @@
+{
+  "key": "screenTransition",
+  "value": [
+    {
+      "id": "イベント管理",
+      "value": "{\"mermaid\":\"graph LR\\n    Login[ログイン画面] --> EventList[イベント一覧画面]\\n    EventList --> EventCreate[イベント作成画面]\\n    EventList --> EventDetail[イベント詳細画面]\\n    EventCreate --> EventConfirm[イベント作成確認画面]\\n    EventConfirm --> EventComplete[イベント作成完了画面]\\n    EventComplete --> EventList\\n    EventDetail --> EventPublish[イベント公開設定画面]\\n    EventPublish --> EventPublishConfirm[公開設定確認画面]\\n    EventPublishConfirm --> EventDetail\"}"
+    },
+    {
+      "id": "参加登録",
+      "value": "{\n  \"mermaid\": \"graph LR\\n    トップページ --> イベント一覧\\n    イベント一覧 --> イベント詳細\\n    イベント詳細 --> 参加登録フォーム\\n    参加登録フォーム --> 参加登録確認\\n    参加登録確認 --> 参加登録完了\\n    \\n    管理トップ --> イベント管理一覧\\n    イベント管理一覧 --> イベント編集\\n    イベント編集 --> 参加項目設定\\n    参加項目設定 --> 入力項目編集\\n    入力項目編集 --> 項目設定プレビュー\\n    項目設定プレビュー --> 項目設定完了\"\n}"
+    },
+    {
+      "id": "チケット管理",
+      "value": "{\n  \"mermaid\": \"graph LR\\n    Login[ログイン] --> EventList[イベント一覧]\\n    EventList --> EventDetail[イベント詳細]\\n    EventDetail --> TicketConfig[チケット設定]\\n    TicketConfig --> TicketTypeInput[チケット種別登録]\\n    TicketTypeInput --> TicketPriceInput[チケット価格設定]\\n    TicketPriceInput --> CapacityInput[定員数設定]\\n    CapacityInput --> TicketConfirm[設定内容確認]\\n    TicketConfirm --> TicketComplete[設定完了]\\n    TicketComplete --> EventDetail\"\n}"
+    },
+    {
+      "id": "メール通知",
+      "value": "{\"mermaid\":\"graph LR\\n    login[ログイン画面] --> eventList[イベント一覧]\\n    eventList --> mailConfig[メール設定画面]\\n    mailConfig --> reminderConfig[リマインドメール設定]\\n    mailConfig --> surveyConfig[アンケートメール設定]\\n    reminderConfig --> templateEdit[テンプレート編集]\\n    surveyConfig --> templateEdit\\n    templateEdit --> mailPreview[メールプレビュー]\\n    mailPreview --> mailSendConfirm[送信確認画面]\\n    mailSendConfirm --> mailSendComplete[送信完了画面]\\n    eventList --> mailHistory[メール送信履歴]\\n    mailHistory --> mailDetail[メール詳細画面]\"}"
+    },
+    {
+      "id": "参加者管理",
+      "value": "{\"mermaid\":\"graph LR\\n    TOP[トップページ] --> EVT_LIST[イベント一覧]\\n    EVT_LIST --> PART_LIST[参加者一覧画面]\\n    PART_LIST --> PART_DETAIL[参加者詳細画面]\\n    PART_LIST --> PART_SUMMARY[参加者数サマリー]\\n    PART_LIST --> CSV_EXPORT[CSVエクスポート画面]\\n    CSV_EXPORT --> DL_CSV[CSVダウンロード]\\n    PART_DETAIL --> PART_EDIT[参加者情報編集]\\n    PART_EDIT --> PART_LIST\\n    PART_SUMMARY --> PART_LIST\"}"
+    },
+    {
+      "id": "出欠管理",
+      "value": "{\"mermaid\":\"graph LR\\n    Login[ログイン画面] --> EventList[イベント一覧]\\n    EventList --> AttendanceList[出欠一覧画面]\\n    AttendanceList --> ScanQR[QRコード読取画面]\\n    AttendanceList --> ManualInput[手動入力画面]\\n    ScanQR --> AttendanceComplete[出欠登録完了]\\n    ManualInput --> AttendanceComplete\\n    AttendanceComplete --> AttendanceList\\n    AttendanceList --> AttendanceExport[出欠データ出力]\\n    AttendanceList --> AttendanceSummary[出欠集計画面]\"}"
+    },
+    {
+      "id": "アンケート管理",
+      "value": "{\"mermaid\":\"graph LR\\n    トップ画面 --> イベント一覧画面\\n    イベント一覧画面 --> アンケート管理画面\\n    アンケート管理画面 --> アンケート作成画面\\n    アンケート管理画面 --> アンケート一覧画面\\n    アンケート一覧画面 --> アンケート編集画面\\n    アンケート一覧画面 --> アンケート回答状況画面\\n    アンケート回答状況画面 --> アンケート集計画面\\n    アンケート回答状況画面 --> アンケート詳細画面\\n    アンケート作成画面 --> アンケート確認画面\\n    アンケート確認画面 --> アンケート完了画面\\n    アンケート回答画面 --> アンケート送信確認画面\\n    アンケート送信確認画面 --> アンケート送信完了画面\"}"
+    },
+    {
+      "id": "シリーズ管理",
+      "value": "{\"mermaid\":\"graph LR\\n    TOP[トップページ] --> LIST[イベント一覧]\\n    LIST --> CREATE[シリーズイベント作成]\\n    CREATE --> BASIC[基本情報入力]\\n    BASIC --> SCHEDULE[開催スケジュール設定]\\n    SCHEDULE --> SETTING[参加者設定]\\n    SETTING --> CONFIRM[登録内容確認]\\n    CONFIRM --> COMPLETE[登録完了]\\n    COMPLETE --> DETAIL[シリーズ詳細]\\n    DETAIL --> EDIT[シリーズ編集]\\n    DETAIL --> DELETE[シリーズ削除]\"}"
+    },
+    {
+      "id": "分析",
+      "value": "{\"mermaid\":\"graph LR\\n    A[トップ画面] --> B[イベント一覧]\\n    B --> C[イベント詳細]\\n    C --> D[分析トップ]\\n    D --> E[アクセス分析]\\n    D --> F[登録推移分析]\\n    E --> G[アクセス分析レポート]\\n    F --> H[登録推移レポート]\\n    G --> I[CSVダウンロード]\\n    H --> I\\n    G --> D\\n    H --> D\"}"
+    }
+  ]
+}

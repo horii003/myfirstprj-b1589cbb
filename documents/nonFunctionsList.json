@@ -1,0 +1,77 @@
+{
+  "key": "nonFunctionsList",
+  "value": [
+    {
+      "id": "NON-001",
+      "category": "性能",
+      "non_function_name": "レスポンス時間",
+      "description": "画面遷移やデータ検索など一般的な処理は3秒以内、一覧表示やレポート出力などの大量データ処理は10秒以内に完了すること"
+    },
+    {
+      "id": "NON-002",
+      "category": "性能",
+      "non_function_name": "同時アクセス数",
+      "description": "最大500ユーザーの同時アクセスに対応できること"
+    },
+    {
+      "id": "NON-003",
+      "category": "可用性",
+      "non_function_name": "システム稼働時間",
+      "description": "24時間365日の稼働を基本とし、計画メンテナンス以外でのシステム停止時間は月間で99.9%以下とすること"
+    },
+    {
+      "id": "NON-004",
+      "category": "セキュリティ",
+      "non_function_name": "アクセス制御",
+      "description": "ユーザー権限に応じた適切なアクセス制御を実装し、不正アクセスを防止すること"
+    },
+    {
+      "id": "NON-005",
+      "category": "セキュリティ",
+      "non_function_name": "データ保護",
+      "description": "個人情報を含むデータは暗号化して保存し、通信時もSSL/TLSによる暗号化を行うこと"
+    },
+    {
+      "id": "NON-006",
+      "category": "バックアップ",
+      "non_function_name": "データバックアップ",
+      "description": "システムデータは日次でバックアップを取得し、最低30日分保持すること"
+    },
+    {
+      "id": "NON-007",
+      "category": "拡張性",
+      "non_function_name": "システム拡張性",
+      "description": "将来的なユーザー数の増加やイベント数の増加に対応できるスケーラブルな設計とすること"
+    },
+    {
+      "id": "NON-008",
+      "category": "運用保守",
+      "non_function_name": "監視体制",
+      "description": "システムの稼働状況、リソース使用状況を常時監視し、異常を検知した場合は運用管理者に通知すること"
+    },
+    {
+      "id": "NON-009",
+      "category": "運用保守",
+      "non_function_name": "障害復旧時間",
+      "description": "重大な障害発生時は2時間以内に復旧作業に着手し、8時間以内に復旧すること"
+    },
+    {
+      "id": "NON-010",
+      "category": "ユーザビリティ",
+      "non_function_name": "操作性",
+      "description": "直感的な操作が可能なUIとし、新規ユーザーでも30分以内の説明で基本操作を習得できること"
+    },
+    {
+      "id": "NON-011",
+      "category": "ユーザビリティ",
+      "non_function_name": "レスポンシブ対応",
+      "description": "PC、タブレット、スマートフォンなど異なる画面サイズに適切に対応すること"
+    },
+    {
+      "id": "NON-012",
+      "category": "法令遵守",
+      "non_function_name": "個人情報保護",
+      "description": "個人情報保護法を遵守し、適切な情報管理と運用体制を整備すること"
+    }
+  ]
+}

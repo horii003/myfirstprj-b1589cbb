@@ -1,0 +1,405 @@
+{
+  "key": "functionsList",
+  "value": [
+    {
+      "id": "FUN-001",
+      "category": "イベント管理",
+      "function_name": "イベント作成",
+      "description": "新規イベントを作成し、基本情報を登録する",
+      "input": "イベント名、開催日時、開催形式（オンライン/オンサイト/ハイブリッド）、イベント説明、開催場所、参加費用設定",
+      "output": "イベント情報",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "イベント作成",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-002",
+      "category": "イベント管理",
+      "function_name": "イベント公開設定",
+      "description": "イベントの募集開始・終了の制御を行う",
+      "input": "イベントID、募集開始日時、募集終了日時、公開ステータス",
+      "output": "イベント公開状態",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "イベント公開設定",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-003",
+      "category": "参加登録",
+      "function_name": "参加者情報入力項目設定",
+      "description": "イベント参加時の入力項目を設定する",
+      "input": "イベントID、入力項目（必須/任意）、入力形式",
+      "output": "参加者入力フォーム設定",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "参加者情報入力項目設定",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-004",
+      "category": "参加登録",
+      "function_name": "参加登録",
+      "description": "イベントへの参加登録を行う",
+      "input": "参加者情報、参加形式（オンライン/オンサイト）、チケット種別",
+      "output": "参加登録完了通知",
+      "user": "イベント参加者",
+      "estimationCategory": "function",
+      "functionName": "参加登録",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-005",
+      "category": "チケット管理",
+      "function_name": "チケット設定",
+      "description": "イベントの各参加形式別のチケット種別と定員を設定する",
+      "input": "イベントID、参加形式、チケット種別（無料/有料）、価格、定員数",
+      "output": "チケット設定情報",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "チケット設定",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-006",
+      "category": "メール通知",
+      "function_name": "参加登録通知メール送信",
+      "description": "参加登録完了時に確認メールを送信する",
+      "input": "参加者情報、イベント情報",
+      "output": "確認メール",
+      "user": "システム",
+      "estimationCategory": "function",
+      "functionName": "参加登録通知メール送信",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-007",
+      "category": "参加者管理",
+      "function_name": "参加者一覧表示",
+      "description": "イベント参加者の一覧を表示する",
+      "input": "イベントID",
+      "output": "参加者一覧",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "参加者一覧表示",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-008",
+      "category": "参加者管理",
+      "function_name": "参加者データ出力",
+      "description": "参加者情報をCSVファイルで出力する",
+      "input": "イベントID、出力形式",
+      "output": "参加者情報CSV",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "参加者データ出力",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-009",
+      "category": "メール通知",
+      "function_name": "リマインドメール設定",
+      "description": "イベント開催前のリマインドメール送信スケジュールを設定する",
+      "input": "イベントID、送信日時設定、メール内容",
+      "output": "リマインドメール設定情報",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "リマインドメール設定",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-010",
+      "category": "メール通知",
+      "function_name": "リマインドメール送信",
+      "description": "設定されたスケジュールでリマインドメールを送信する",
+      "input": "送信予定リスト",
+      "output": "リマインドメール",
+      "user": "システム",
+      "estimationCategory": "function",
+      "functionName": "リマインドメール送信",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-011",
+      "category": "出欠管理",
+      "function_name": "出欠確認",
+      "description": "イベント当日の参加者の出欠を記録する",
+      "input": "参加者ID、出欠状態",
+      "output": "出欠記録",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "出欠確認",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-012",
+      "category": "アンケート管理",
+      "function_name": "アンケート作成",
+      "description": "イベント実施後のアンケートを作成する",
+      "input": "イベントID、アンケート項目、回答期限",
+      "output": "アンケートフォーム",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "アンケート作成",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-013",
+      "category": "アンケート管理",
+      "function_name": "アンケート回答",
+      "description": "イベント参加者がアンケートに回答する",
+      "input": "参加者ID、アンケート回答内容",
+      "output": "アンケート回答データ",
+      "user": "イベント参加者",
+      "estimationCategory": "function",
+      "functionName": "アンケート回答",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-014",
+      "category": "シリーズ管理",
+      "function_name": "シリーズイベント作成",
+      "description": "複数回開催のシリーズイベントを作成する",
+      "input": "シリーズ名、開催回数、各回の開催情報",
+      "output": "シリーズイベント情報",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "シリーズイベント作成",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-015",
+      "category": "分析",
+      "function_name": "アクセス分析",
+      "description": "イベント告知ページへのアクセス状況を分析する",
+      "input": "イベントID、期間",
+      "output": "アクセス分析レポート",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "アクセス分析",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-016",
+      "category": "分析",
+      "function_name": "登録推移分析",
+      "description": "イベント参加登録数の推移を分析する",
+      "input": "イベントID、期間",
+      "output": "登録推移レポート",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "登録推移分析",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-017",
+      "category": "イベント管理",
+      "function_name": "イベント一覧表示",
+      "description": "作成した全イベントの一覧を表示する",
+      "input": "開催者ID",
+      "output": "イベント一覧",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "イベント一覧表示",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-018",
+      "category": "参加者管理",
+      "function_name": "参加者数集計",
+      "description": "イベントの現在の参加登録状況を集計する",
+      "input": "イベントID",
+      "output": "参加者数サマリー",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "参加者数集計",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-019",
+      "category": "アンケート管理",
+      "function_name": "アンケート集計",
+      "description": "回収したアンケートの結果を集計する",
+      "input": "イベントID",
+      "output": "アンケート集計結果",
+      "user": "イベント開催者",
+      "estimationCategory": "function",
+      "functionName": "アンケート集計",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    },
+    {
+      "id": "FUN-020",
+      "category": "メール通知",
+      "function_name": "アンケート依頼メール送信",
+      "description": "イベント終了後、参加者にアンケート回答を依頼するメールを送信する",
+      "input": "イベントID、参加者リスト、アンケートURL",
+      "output": "アンケート依頼メール",
+      "user": "システム",
+      "estimationCategory": "function",
+      "functionName": "アンケート依頼メール送信",
+      "target": true,
+      "manMonth": {
+        "requirementDefinition": "",
+        "design": "",
+        "implementation": "",
+        "test": "",
+        "release": "",
+        "migration": ""
+      }
+    }
+  ]
+}

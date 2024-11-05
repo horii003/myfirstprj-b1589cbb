@@ -1,0 +1,41 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "イベント管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor ユーザー\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    note over ユーザー,DB: イベント作成フロー\\n    ユーザー->>Frontend: イベント作成画面を開く\\n    Frontend->>Backend: イベント作成フォーム要求\\n    Backend->>Frontend: フォーム表示データ返却\\n    Frontend->>ユーザー: イベント作成フォーム表示\\n    ユーザー->>Frontend: イベント情報入力\\n    Frontend->>Backend: イベントデータ送信\\n    Backend->>Backend: データ検証\\n    Backend->>DB: イベント基本情報保存\\n    DB->>Backend: 保存完了通知\\n    Backend->>DB: チケット情報保存\\n    DB->>Backend: 保存完了通知\\n    Backend->>Frontend: イベント作成完了通知\\n    Frontend->>ユーザー: 完了画面表示\\n\\n    note over ユーザー,DB: イベント一覧表示フロー\\n    ユーザー->>Frontend: イベント一覧表示要求\\n    Frontend->>Backend: イベント一覧データ要求\\n    Backend->>DB: イベントデータ取得\\n    DB->>Backend: イベント一覧データ返却\\n    Backend->>Frontend: イベント一覧データ送信\\n    Frontend->>ユーザー: イベント一覧表示\\n\\n    note over ユーザー,DB: イベント公開設定フロー\\n    ユーザー->>Frontend: 公開設定変更\\n    Frontend->>Backend: 公開設定更新要求\\n    Backend->>DB: 公開ステータス更新\\n    DB->>Backend: 更新完了通知\\n    Backend->>Frontend: 設定更新完了通知\\n    Frontend->>ユーザー: 更新完了表示\"\n}"
+    },
+    {
+      "id": "参加登録",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor ユーザー\\n    participant フロントエンド\\n    participant バックエンド\\n    participant DB\\n\\n    ユーザー->>フロントエンド: イベント参加フォームにアクセス\\n    フロントエンド->>バックエンド: イベント情報取得リクエスト\\n    バックエンド->>DB: イベント情報照会\\n    DB-->>バックエンド: イベント情報返却\\n    バックエンド-->>フロントエンド: イベント情報送信\\n    フロントエンド-->>ユーザー: 参加フォーム表示\\n\\n    ユーザー->>フロントエンド: 参加者情報入力\\n    フロントエンド->>バックエンド: 参加登録リクエスト\\n    バックエンド->>DB: チケット在庫確認\\n    DB-->>バックエンド: 在庫状態返却\\n    バックエンド->>バックエンド: 入力データ検証\\n    バックエンド->>DB: 参加者情報登録\\n    DB-->>バックエンド: 登録完了通知\\n    バックエンド->>バックエンド: 確認メール生成\\n    バックエンド-->>フロントエンド: 登録完了通知\\n    フロントエンド-->>ユーザー: 完了画面表示\"\n}"
+    },
+    {
+      "id": "チケット管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor イベント主催者\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    イベント主催者->>Frontend: チケット設定画面を開く\\n    Frontend->>Backend: チケット設定情報を要求\\n    Backend->>DB: イベント情報を取得\\n    DB-->>Backend: イベント情報を返却\\n    Backend-->>Frontend: チケット設定情報を返却\\n    Frontend-->>イベント主催者: チケット設定フォームを表示\\n\\n    イベント主催者->>Frontend: チケット情報を入力\\n    イベント主催者->>Frontend: 保存をクリック\\n    Frontend->>Backend: チケット設定を送信\\n    Backend->>Backend: バリデーション実行\\n    Backend->>DB: チケット情報を保存\\n    DB-->>Backend: 保存完了を通知\\n    Backend-->>Frontend: 保存結果を返却\\n    Frontend-->>イベント主催者: 保存完了を表示\"\n}"
+    },
+    {
+      "id": "メール通知",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    participant ユーザー\\n    participant フロントエンド\\n    participant バックエンド\\n    participant メール送信サービス\\n    participant DB\\n\\n    ユーザー->>フロントエンド: リマインドメール設定画面を開く\\n    フロントエンド->>バックエンド: イベント情報取得リクエスト\\n    バックエンド->>DB: イベントデータ取得\\n    DB-->>バックエンド: イベントデータ\\n    バックエンド-->>フロントエンド: イベント情報\\n    フロントエンド-->>ユーザー: 設定画面表示\\n\\n    ユーザー->>フロントエンド: メール設定を入力\\n    フロントエンド->>バックエンド: メール設定保存リクエスト\\n    バックエンド->>DB: メール設定を保存\\n    DB-->>バックエンド: 保存完了\\n    バックエンド-->>フロントエンド: 設定完了通知\\n    フロントエンド-->>ユーザー: 完了メッセージ表示\\n\\n    Note over バックエンド: 設定時刻になると自動実行\\n    バックエンド->>DB: 送信対象者データ取得\\n    DB-->>バックエンド: 参加者リスト\\n    バックエンド->>メール送信サービス: メール送信要求\\n    メール送信サービス->>メール送信サービス: メール配信処理\\n    メール送信サービス-->>バックエンド: 送信結果\\n    バックエンド->>DB: 送信履歴を記録\\n    DB-->>バックエンド: 記録完了\"\n}"
+    },
+    {
+      "id": "参加者管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor ユーザー\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    ユーザー->>Frontend: 参加者一覧画面を表示\\n    Frontend->>Backend: 参加者一覧データを要求\\n    Backend->>DB: SELECT参加者データ\\n    DB-->>Backend: 参加者データ返却\\n    Backend-->>Frontend: 参加者一覧データ返却\\n    Frontend-->>ユーザー: 参加者一覧を表示\\n\\n    ユーザー->>Frontend: CSV出力ボタンクリック\\n    Frontend->>Backend: 参加者データCSV出力要求\\n    Backend->>DB: SELECT参加者データ\\n    DB-->>Backend: 参加者データ返却\\n    Backend-->>Frontend: CSVファイル返却\\n    Frontend-->>ユーザー: CSVダウンロード\\n\\n    ユーザー->>Frontend: 参加者数集計表示要求\\n    Frontend->>Backend: 参加者数集計データ要求\\n    Backend->>DB: SELECT参加状況データ\\n    DB-->>Backend: 参加状況データ返却\\n    Backend-->>Frontend: 集計結果返却\\n    Frontend-->>ユーザー: 参加者数サマリー表示\"\n}"
+    },
+    {
+      "id": "出欠管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor 開催者\\n    participant Frontend\\n    participant Backend\\n    participant DB\\n\\n    開催者->>Frontend: QRコードスキャン/手動入力\\n    Frontend->>Backend: 出欠情報送信\\n    Backend->>DB: 参加者情報照会\\n    DB-->>Backend: 参加者データ返却\\n    Backend->>DB: 出欠状態更新\\n    DB-->>Backend: 更新完了\\n    Backend->>DB: 出欠履歴記録\\n    DB-->>Backend: 記録完了\\n    Backend-->>Frontend: 更新結果返却\\n    Frontend-->>開催者: 完了通知表示\"\n}"
+    },
+    {
+      "id": "アンケート管理",
+      "value": "{\n\"mermaid\": \"sequenceDiagram\\n    participant ユーザー\\n    participant フロントエンド\\n    participant バックエンド\\n    participant DB\\n\\n    alt アンケート作成\\n        ユーザー->>フロントエンド: アンケート項目入力\\n        フロントエンド->>バックエンド: アンケート作成リクエスト\\n        バックエンド->>DB: アンケート情報保存\\n        DB-->>バックエンド: 保存完了\\n        バックエンド-->>フロントエンド: アンケートID返却\\n        フロントエンド-->>ユーザー: 作成完了表示\\n    end\\n\\n    alt アンケート回答\\n        ユーザー->>フロントエンド: アンケート回答入力\\n        フロントエンド->>バックエンド: 回答データ送信\\n        バックエンド->>DB: 回答データ保存\\n        DB-->>バックエンド: 保存完了\\n        バックエンド-->>フロントエンド: 回答受付完了\\n        フロントエンド-->>ユーザー: 完了表示\\n    end\\n\\n    alt アンケート集計\\n        ユーザー->>フロントエンド: 集計リクエスト\\n        フロントエンド->>バックエンド: 集計処理依頼\\n        バックエンド->>DB: アンケートデータ取得\\n        DB-->>バックエンド: アンケートデータ\\n        バックエンド->>バックエンド: データ集計処理\\n        バックエンド-->>フロントエンド: 集計結果返却\\n        フロントエンド-->>ユーザー: 集計結果表示\\n    end\"\n}"
+    },
+    {
+      "id": "シリーズ管理",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor User as イベント主催者\\n    participant Frontend as フロントエンド\\n    participant Backend as バックエンド\\n    participant DB as データベース\\n\\n    User->>Frontend: シリーズイベント作成画面を開く\\n    Frontend->>Backend: シリーズイベント作成画面データ要求\\n    Backend->>Frontend: 作成フォーム情報を返却\\n    Frontend->>User: シリーズイベント作成フォームを表示\\n\\n    User->>Frontend: シリーズ基本情報を入力\\n    User->>Frontend: 各回の開催情報を入力\\n    User->>Frontend: 保存をクリック\\n\\n    Frontend->>Backend: シリーズイベント作成リクエスト\\n    Backend->>Backend: バリデーション実行\\n    Backend->>DB: シリーズ情報を保存\\n    DB->>Backend: 保存完了\\n    Backend->>DB: 各回イベント情報を保存\\n    DB->>Backend: 保存完了\\n    Backend->>Frontend: 作成完了レスポンス\\n    Frontend->>User: 作成完了メッセージを表示\"\n}"
+    },
+    {
+      "id": "分析",
+      "value": "{\n  \"mermaid\": \"sequenceDiagram\\n    actor ユーザー\\n    participant フロントエンド\\n    participant バックエンド\\n    participant DB\\n    \\n    ユーザー->>フロントエンド: アクセス分析画面を表示\\n    フロントエンド->>バックエンド: アクセスデータ要求\\n    バックエンド->>DB: アクセスログ取得\\n    DB-->>バックエンド: アクセスログ返却\\n    バックエンド->>DB: 登録データ取得\\n    DB-->>バックエンド: 登録データ返却\\n    バックエンド->>バックエンド: データ集計処理\\n    バックエンド-->>フロントエンド: 分析結果返却\\n    フロントエンド->>フロントエンド: グラフ描画\\n    フロントエンド-->>ユーザー: 分析結果表示\\n    \\n    ユーザー->>フロントエンド: 期間変更\\n    フロントエンド->>バックエンド: 新期間でデータ要求\\n    バックエンド->>DB: 新期間のデータ取得\\n    DB-->>バックエンド: データ返却\\n    バックエンド->>バックエンド: 再集計処理\\n    バックエンド-->>フロントエンド: 更新データ返却\\n    フロントエンド->>フロントエンド: グラフ更新\\n    フロントエンド-->>ユーザー: 更新結果表示\"\n}"
+    }
+  ]
+}

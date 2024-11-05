@@ -1,0 +1,405 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "id": "TAB-001",
+      "table": "events",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "イベントの一意識別子"
+    },
+    {
+      "id": "TAB-002",
+      "table": "events",
+      "column": "title",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "イベントのタイトル"
+    },
+    {
+      "id": "TAB-003",
+      "table": "events",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "イベントの説明文"
+    },
+    {
+      "id": "TAB-004",
+      "table": "events",
+      "column": "event_type",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'online'",
+      "foreignKey": "",
+      "description": "イベント形式（online/onsite/hybrid）"
+    },
+    {
+      "id": "TAB-005",
+      "table": "events",
+      "column": "start_datetime",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "イベント開始日時"
+    },
+    {
+      "id": "TAB-006",
+      "table": "events",
+      "column": "end_datetime",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "イベント終了日時"
+    },
+    {
+      "id": "TAB-007",
+      "table": "events",
+      "column": "venue",
+      "dataType": "jsonb",
+      "regulation": "",
+      "defaultValue": "{\"name\": \"\", \"address\": \"\", \"access\": \"\", \"map_url\": \"\"}",
+      "foreignKey": "",
+      "description": "開催場所情報"
+    },
+    {
+      "id": "TAB-008",
+      "table": "events",
+      "column": "registration_start",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "参加登録開始日時"
+    },
+    {
+      "id": "TAB-009",
+      "table": "events",
+      "column": "registration_end",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "参加登録終了日時"
+    },
+    {
+      "id": "TAB-010",
+      "table": "events",
+      "column": "status",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'draft'",
+      "foreignKey": "",
+      "description": "イベントステータス（draft/published/closed/cancelled）"
+    },
+    {
+      "id": "TAB-011",
+      "table": "events",
+      "column": "series_id",
+      "dataType": "uuid",
+      "regulation": "",
+      "defaultValue": "",
+      "foreignKey": "series(id)",
+      "description": "所属するシリーズのID"
+    },
+    {
+      "id": "TAB-012",
+      "table": "events",
+      "column": "created_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "now()",
+      "foreignKey": "",
+      "description": "作成日時"
+    },
+    {
+      "id": "TAB-013",
+      "table": "events",
+      "column": "updated_at",
+      "dataType": "timestamp with time zone",
+      "regulation": "NOT NULL",
+      "defaultValue": "now()",
+      "foreignKey": "",
+      "description": "更新日時"
+    },
+    {
+      "id": "TAB-014",
+      "table": "series",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "シリーズの一意識別子"
+    },
+    {
+      "id": "TAB-015",
+      "table": "series",
+      "column": "title",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "シリーズのタイトル"
+    },
+    {
+      "id": "TAB-016",
+      "table": "series",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "シリーズの説明文"
+    },
+    {
+      "id": "TAB-017",
+      "table": "tickets",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "チケットの一意識別子"
+    },
+    {
+      "id": "TAB-018",
+      "table": "tickets",
+      "column": "event_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "events(id)",
+      "description": "関連するイベントのID"
+    },
+    {
+      "id": "TAB-019",
+      "table": "tickets",
+      "column": "name",
+      "dataType": "varchar(50)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "チケット名"
+    },
+    {
+      "id": "TAB-020",
+      "table": "tickets",
+      "column": "price",
+      "dataType": "integer",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "チケット価格"
+    },
+    {
+      "id": "TAB-021",
+      "table": "tickets",
+      "column": "capacity",
+      "dataType": "integer",
+      "regulation": "NOT NULL",
+      "defaultValue": "0",
+      "foreignKey": "",
+      "description": "定員数"
+    },
+    {
+      "id": "TAB-022",
+      "table": "tickets",
+      "column": "description",
+      "dataType": "text",
+      "regulation": "",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "チケットの説明文"
+    },
+    {
+      "id": "TAB-023",
+      "table": "registrations",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "参加登録の一意識別子"
+    },
+    {
+      "id": "TAB-024",
+      "table": "registrations",
+      "column": "event_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "events(id)",
+      "description": "関連するイベントのID"
+    },
+    {
+      "id": "TAB-025",
+      "table": "registrations",
+      "column": "ticket_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "tickets(id)",
+      "description": "選択されたチケットのID"
+    },
+    {
+      "id": "TAB-026",
+      "table": "registrations",
+      "column": "participant_info",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"name\": \"\", \"email\": \"\", \"organization\": \"\", \"position\": \"\"}",
+      "foreignKey": "",
+      "description": "参加者情報"
+    },
+    {
+      "id": "TAB-027",
+      "table": "registrations",
+      "column": "status",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "'pending'",
+      "foreignKey": "",
+      "description": "参加状態（pending/confirmed/cancelled）"
+    },
+    {
+      "id": "TAB-028",
+      "table": "registrations",
+      "column": "attendance",
+      "dataType": "varchar(20)",
+      "regulation": "",
+      "defaultValue": "null",
+      "foreignKey": "",
+      "description": "出欠状態（present/absent/null）"
+    },
+    {
+      "id": "TAB-029",
+      "table": "surveys",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "アンケートの一意識別子"
+    },
+    {
+      "id": "TAB-030",
+      "table": "surveys",
+      "column": "event_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "events(id)",
+      "description": "関連するイベントのID"
+    },
+    {
+      "id": "TAB-031",
+      "table": "surveys",
+      "column": "questions",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "[{\"id\": 1, \"type\": \"text\", \"question\": \"質問内容\", \"required\": true}]",
+      "foreignKey": "",
+      "description": "アンケート質問項目"
+    },
+    {
+      "id": "TAB-032",
+      "table": "survey_responses",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "アンケート回答の一意識別子"
+    },
+    {
+      "id": "TAB-033",
+      "table": "survey_responses",
+      "column": "survey_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "surveys(id)",
+      "description": "関連するアンケートのID"
+    },
+    {
+      "id": "TAB-034",
+      "table": "survey_responses",
+      "column": "registration_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "registrations(id)",
+      "description": "回答者の参加登録ID"
+    },
+    {
+      "id": "TAB-035",
+      "table": "survey_responses",
+      "column": "answers",
+      "dataType": "jsonb",
+      "regulation": "NOT NULL",
+      "defaultValue": "[{\"question_id\": 1, \"answer\": \"回答内容\"}]",
+      "foreignKey": "",
+      "description": "アンケート回答内容"
+    },
+    {
+      "id": "TAB-036",
+      "table": "mail_templates",
+      "column": "id",
+      "dataType": "uuid",
+      "regulation": "PRIMARY KEY, NOT NULL",
+      "defaultValue": "uuid_generate_v4()",
+      "foreignKey": "",
+      "description": "メールテンプレートの一意識別子"
+    },
+    {
+      "id": "TAB-037",
+      "table": "mail_templates",
+      "column": "event_id",
+      "dataType": "uuid",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "events(id)",
+      "description": "関連するイベントのID"
+    },
+    {
+      "id": "TAB-038",
+      "table": "mail_templates",
+      "column": "type",
+      "dataType": "varchar(20)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "メールの種類（confirmation/reminder/survey）"
+    },
+    {
+      "id": "TAB-039",
+      "table": "mail_templates",
+      "column": "subject",
+      "dataType": "varchar(100)",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "メールの件名"
+    },
+    {
+      "id": "TAB-040",
+      "table": "mail_templates",
+      "column": "body",
+      "dataType": "text",
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "foreignKey": "",
+      "description": "メール本文"
+    }
+  ]
+}

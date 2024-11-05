@@ -1,0 +1,6 @@
+{
+  "key": "systemArchitecture",
+  "value": {
+    "mermaid": "graph TD\n    subgraph Frontend\n        subgraph EventOrganizer\n            EO[イベント開催者UI]\n        end\n        subgraph Participant\n            PA[イベント参加者UI]\n        end\n    end\n    subgraph Backend\n        API[APIサーバ]\n        AUTH[認証サービス]\n        EVENTMGMT[イベント管理]\n        REGMGMT[参加登録管理]\n        SURVEY[アンケート管理]\n        MAIL[メール配信]\n        ANALYTICS[分析エンジン]\n    end\n    subgraph Database\n        EVENTDB[(イベントDB)]\n        USERDB[(ユーザDB)]\n        SURVEYDB[(アンケートDB)]\n        ANALYTICSDB[(分析DB)]\n    end\n    subgraph External\n        MAILSVC[メール配信サービス]\n        PAYMENT[決済サービス]\n    end\n    EO --> API\n    PA --> API\n    API --> AUTH\n    API --> EVENTMGMT\n    API --> REGMGMT\n    API --> SURVEY\n    API --> MAIL\n    API --> ANALYTICS\n    EVENTMGMT --> EVENTDB\n    AUTH --> USERDB\n    SURVEY --> SURVEYDB\n    ANALYTICS --> ANALYTICSDB\n    MAIL --> MAILSVC\n    REGMGMT --> PAYMENT"
+  }
+}
